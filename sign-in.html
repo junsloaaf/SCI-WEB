@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign In | SCI-WEB</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+    body {
+      background-color: #eef2fa;
+    }
+    nav {
+      width: 100%;
+      background-color: #2c4a7c;
+      z-index: 10;
+    }
+
+    .nav-container {
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      font-size: 12px;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .nav-actions a {
+      background-color: white;
+      color: #2c4a7c;
+      padding: 3px 12px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s, color 0.3s;
+      font-size: 12px;
+    }
+
+    .nav-actions a:hover,
+    .nav-actions a:focus {
+      background-color: #ffffff;
+      color: #2c4a7c;
+      opacity: 0.85;
+    }
+    .container {
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: calc(100vh - 60px);
+    }
+    .form-box {
+      background-color: white;
+      padding: 30px;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .form-box h2 {
+      color: #2c4a7c;
+      margin-bottom: 25px;
+    }
+    .form-box label {
+      display: block;
+      text-align: left;
+      color: #2c4a7c;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+    .form-box input,
+    .form-box select {
+      width: 100%;
+      padding: 10px;
+      border: 1.5px solid #cbd3e1;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      outline: none;
+      font-size: 14px;
+      transition: border-color 0.3s;
+    }
+    .form-box input:focus,
+    .form-box select:focus {
+      border-color: #2c4a7c;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background-color: #2c4a7c;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 25px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-submit:hover {
+      background-color: #243e5e;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-container">
+      <div class="nav-links">
+        <a href="index.html">Beranda</a>
+        <a href="index.html#alur">Alur</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="helpdesk.html">Help Desk</a>
+      </div>
+      <div class="nav-actions">
+        <a href="sign-in.html">Sign In</a>
+        <a href="log-in.html">Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="form-box">
+      <h2>Sign In</h2>
+      <form action="submit.html" method="post">
+        <label for="nisn">NISN</label>
+        <input type="number" id="nisn" name="nisn" placeholder="Masukkan NISN" required />
+
+        <label for="npsn">NPSN</label>
+        <input type="number" id="npsn" name="npsn" placeholder="Masukkan NPSN" required />
+
+        <label for="nama">Nama Lengkap</label>
+        <input type="text" id="nama" name="nama" placeholder="Masukkan Nama Lengkap" required />
+
+        <label for="email">Email Aktif</label>
+        <input type="email" id="email" name="email" placeholder="Masukkan Email" required />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Masukkan Password" required />
+
+        <label for="daftar">Daftar Sebagai</label>
+        <select id="daftar" name="daftar" required>
+          <option value="">-- Pilihan --</option>
+          <option value="siswa">Siswa</option>
+          <option value="guru">Guru</option>
+          <option value="admin">Admin</option>
+        </select>
+
+        <a href="submit.html" class="btn-submit">Submit</a>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

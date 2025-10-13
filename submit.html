@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submit | SCI-WEB</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #eef2fa;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Navbar (gunakan yang sudah ada) */
+    nav {
+      width: 100%;
+      background-color: #2c4a7c;
+      z-index: 10;
+    }
+
+    .nav-container {
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      font-size: 12px;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .nav-actions a {
+      background-color: white;
+      color: #2c4a7c;
+      padding: 3px 12px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s, color 0.3s;
+      font-size: 12px;
+    }
+
+    .nav-actions a:hover,
+    .nav-actions a:focus {
+      background-color: #ffffff;
+      color: #2c4a7c;
+      opacity: 0.85;
+    }
+
+    /* Konten tengah */
+    .success-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .success-box {
+      background-color: white;
+      border-radius: 20px;
+      padding: 40px 30px;
+      text-align: center;
+      max-width: 400px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .success-box h2 {
+      color: #2c4a7c;
+      font-size: 1.8em;
+      margin-bottom: 20px;
+    }
+
+    .success-box p {
+      color: #333;
+      font-size: 1em;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+
+    .btn-back {
+      display: inline-block;
+      background-color: #2c4a7c;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 1em;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+
+    .btn-back:hover {
+      background-color: #243e5e;
+    }
+
+    /* Responsif */
+    @media (max-width: 600px) {
+      .success-box {
+        padding: 30px 20px;
+      }
+      .success-box h2 {
+        font-size: 1.5em;
+      }
+      .success-box p {
+        font-size: 0.95em;
+      }
+      .btn-back {
+        padding: 10px 20px;
+        font-size: 0.95em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <div class="nav-links">
+        <a href="index.html">Beranda</a>
+        <a href="#">Alur</a>
+        <a href="#">FAQ</a>
+        <a href="#">Help Desk</a>
+      </div>
+      <div class="nav-actions">
+        <a href="sign-in.html">Sign In</a>
+        <a href="log-in.html">Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="success-container">
+    <div class="success-box">
+      <h2>Pendaftaran akun berhasil!</h2>
+      <p>Mohon kembali ke laman “Beranda” dan login menggunakan akun yang telah dibuat.</p>
+      <a href="index.html" class="btn-back">Kembali ke Beranda</a>
+    </div>
+  </div>
+</body>
+</html>

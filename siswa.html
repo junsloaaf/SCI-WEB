@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Siswa | SCI-WEB</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+    body {
+      background-color: #eef2fa;
+      color: #2c4a7c;
+    }
+        nav {
+      width: 100%;
+      background-color: #2c4a7c;
+      z-index: 10;
+    }
+
+    .nav-container {
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      font-size: 12px;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .nav-actions a {
+      background-color: white;
+      color: #2c4a7c;
+      padding: 3px 12px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s, color 0.3s;
+      font-size: 12px;
+    }
+    main {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 40px;
+    }
+    .sidebar, .content {
+      background-color: white;
+      border-radius: 25px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .sidebar {
+      width: 300px;
+    }
+    .sidebar h2 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+    .sidebar p {
+      font-size: 0.95em;
+    }
+    .sidebar .menu-title {
+      margin-top: 30px;
+      font-size: 1.2em;
+      font-weight: 600;
+    }
+    .sidebar .menu-btn {
+      display: block;
+      background-color: #2c4a7c;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      padding: 12px;
+      margin: 12px 0;
+      width: 100%;
+      font-weight: 600;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .sidebar .menu-btn:hover {
+      background-color: #243e5e;
+    }
+
+    .content {
+      flex: 1;
+    }
+    .content h2 {
+      font-size: 1.7em;
+      margin-bottom: 25px;
+    }
+
+    /* Views default hidden except kategori */
+    .view {
+      display: none;
+    }
+    .view.active {
+      display: block;
+    }
+
+    .kategori-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 20px;
+      justify-items: center;
+    }
+    .kategori-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .kategori-icon {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+    .kategori-btn {
+      background-color: #eef3ff;
+      border: 2px solid #2c4a7c;
+      border-radius: 20px;
+      padding: 8px 12px;
+      max-width: 140px;
+      font-size: 0.95em;
+      font-weight: 700;
+      color: #2c4a7c;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    .kategori-btn:hover {
+      background-color: #dbe6ff;
+      transform: scale(1.03);
+    }
+
+        .selected-note {
+      font-size: 0.85em;
+      margin-top: 6px;
+      color: #2c4a7c;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-3px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+
+    .upload-form label {
+      display: block;
+      margin: 15px 0 5px;
+      font-size: 1em;
+    }
+    .upload-form input[type="text"],
+    .upload-form textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1.5px solid #cbd3e1;
+      border-radius: 8px;
+      font-size: 1em;
+      resize: vertical;
+    }
+    .upload-form textarea {
+      min-height: 120px;
+    }
+    .upload-form .actions {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .upload-form .actions label.btn-upload {
+      background-color: #2c4a7c;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 1em;
+      font-weight: 600;
+      transition: background-color 0.3s;
+      display: inline-block;
+    }
+    .upload-form .actions label.btn-upload:hover {
+      background-color: #243e5e;
+    }
+    .upload-form .actions input[type="file"] {
+      display: none;
+    }
+    .upload-form .actions button {
+      background-color: #2c4a7c;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 25px;
+      font-size: 1em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .upload-form .actions button:hover {
+      background-color: #243e5e;
+    }
+
+    .status-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    .status-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .status-item .checkbox {
+      width: 30px;
+      height: 30px;
+      border: 2px solid #2c4a7c;
+      border-radius: 8px;
+      margin-right: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2em;
+      color: #2c4a7c;
+    }
+    .status-item .checkbox.checked {
+      background-color: #2c4a7c;
+      color: white;
+      border-color: #2c4a7c;
+    }
+    .status-item span {
+      font-size: 1em;
+    }
+
+    .logout-view {
+      display: none;
+    }
+    .logout-view.active {
+      display: block;
+    }
+    .logout-view .info {
+      font-size: 1em;
+      margin-bottom: 20px;
+    }
+    .logout-view .btn-logout-view {
+      background-color: #2c4a7c;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 25px;
+      font-size: 1em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .logout-view .btn-logout-view:hover {
+      background-color: #243e5e;
+    }
+
+    @media (max-width: 768px) {
+      main {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <div class="nav-links">
+        <a href="index.html">Beranda</a>
+        <a href="siswa-faq.html">FAQ</a>
+        <a href="helpdesk.html">Help Desk</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="sidebar">
+      <h2>Halo, Aliya.</h2>
+      <p>Nama: Aliya Syauqina Hadi</p>
+      <p>NISN: 0076726146</p>
+      <p>Asal Sekolah: SMAN 2 Probolinggo</p>
+
+      <div class="menu-title">Pilihan Menu</div>
+      <button class="menu-btn" id="btn-kategori">Kategori Ide</button>
+      <button class="menu-btn" id="btn-unggah">Unggah Karya</button>
+      <button class="menu-btn" id="btn-status">Status Karya</button>
+      <button class="menu-btn" id="btn-logout-menu">Logout</button>
+    </div>
+
+    <div class="content">
+      <!-- Kategori view -->
+      <div class="view kategori-view active" id="view-kategori">
+        <h2>Kategori Ide</h2>
+        <div class="kategori-grid">
+          <div class="kategori-item">
+            <img src="image/pendidikan.jpg" alt="Pendidikan Icon" class="kategori-icon">
+            <div class="kategori-btn">Pendidikan</div>
+          </div>
+          <div class="kategori-item">
+            <img src="image/makanan.jpg" alt="Makanan Icon" class="kategori-icon">
+            <div class="kategori-btn">Makanan</div>
+          </div>
+          <div class="kategori-item">
+            <img src="image/seni.jpg" alt="Seni Icon" class="kategori-icon">
+            <div class="kategori-btn">Seni</div>
+          </div>
+          <div class="kategori-item">
+            <img src="image/kesehatan.jpg" alt="Kesehatan Icon" class="kategori-icon">
+            <div class="kategori-btn">Kesehatan</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Upload karya view -->
+      <div class="view upload-form" id="view-unggah">
+        <h2>Unggah Karya</h2>
+        <form>
+          <label for="judul">Judul Karya</label>
+          <input type="text" id="judul" name="judul" placeholder="Masukkan judul karya" />
+
+          <label for="ringkasan">Ringkasan (Maks. 250 kata)</label>
+          <textarea id="ringkasan" name="ringkasan" placeholder="Tuliskan ringkasan karya"></textarea>
+
+          <div class="actions">
+            <label for="dokumen" class="btn-upload">Unggah Dokumen Pendukung</label>
+            <input type="file" id="dokumen" name="dokumen" accept=".pdf,.jpg,.png" />
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Status view -->
+      <div class="view status-view" id="view-status">
+        <h2>Status Karya</h2>
+        <ul class="status-list">
+          <li class="status-item">
+            <div class="checkbox checked">✔</div>
+            <span>Unggah Dokumen Pendukung</span>
+          </li>
+          <li class="status-item">
+            <div class="checkbox checked">✔</div>
+            <span>Validasi Biodata Siswa oleh Pembimbing</span>
+          </li>
+          <li class="status-item">
+            <div class="checkbox checked">✔</div>
+            <span>Submit Judul dan Ringkasan Ide Kreatif</span>
+          </li>
+          <li class="status-item">
+            <div class="checkbox checked">✔</div>
+            <span>Finalisasi Data oleh Pembimbing</span>
+          </li>
+          <li class="status-item">
+            <div class="checkbox"> </div>
+            <span>Finalisasi Data oleh Asesor</span>
+          </li>
+          <li class="status-item">
+            <div class="checkbox"> </div>
+            <span>Hasil Penilaian</span>
+          </li>
+          <li class="status-item">
+            <div class="checkbox"> </div>
+            <span>Cetak Sertifikat</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Logout view -->
+      <div class="view logout-view" id="view-logout">
+        <h2>Logout</h2>
+        <div class="info">
+          <p>Nama: Aliya Syauqina Hadi</p>
+          <p>NISN: 0076726146</p>
+          <p>Asal Sekolah: SMAN 2 Probolinggo</p>
+        </div>
+        <button class="btn-logout-view" id="btn-logout-confirm">Logout</button>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const btnKategori = document.getElementById('btn-kategori');
+    const btnUnggah = document.getElementById('btn-unggah');
+    const btnStatus = document.getElementById('btn-status');
+    const btnLogoutMenu = document.getElementById('btn-logout-menu');
+    const btnLogoutConfirm = document.getElementById('btn-logout-confirm');
+    // === KATEGORI IDE INTERAKTIF ===
+    const kategoriButtons = document.querySelectorAll('.kategori-btn');
+
+    kategoriButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // reset semua
+        kategoriButtons.forEach(b => {
+          b.style.backgroundColor = '#eef3ff';
+          b.style.color = '#2c4a7c';
+          const existingNote = b.parentElement.querySelector('.selected-note');
+          if (existingNote) existingNote.remove();
+        });
+
+        // ubah warna tombol aktif
+        btn.style.backgroundColor = '#2c4a7c';
+        btn.style.color = 'white';
+
+        // tambahkan teks "Kategori telah terpilih"
+        const note = document.createElement('div');
+        note.classList.add('selected-note');
+        note.textContent = 'Kategori telah terpilih';
+        note.style.fontSize = '0.85em';
+        note.style.marginTop = '6px';
+        note.style.color = '#2c4a7c';
+        btn.parentElement.appendChild(note);
+      });
+    });
+
+
+    function showView(viewId) {
+      document.querySelectorAll('.view').forEach(v => {
+        v.classList.remove('active');
+      });
+      document.getElementById(viewId).classList.add('active');
+    }
+
+    btnKategori.addEventListener('click', () => showView('view-kategori'));
+    btnUnggah.addEventListener('click', () => showView('view-unggah'));
+    btnStatus.addEventListener('click', () => showView('view-status'));
+    btnLogoutMenu.addEventListener('click', () => showView('view-logout'));
+    btnLogoutConfirm.addEventListener('click', () => {
+      window.location.href = 'index.html'; 
+    });
+
+    showView('view-kategori');
+  </script>
+</body>
+</html>

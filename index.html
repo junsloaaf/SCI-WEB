@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beranda | SCI-WEB</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+    body { background-color: #eef2fa; color: #2c4a7c; }
+
+    /* NAVBAR */
+    nav {
+      width: 100%;
+      background-color: #2c4a7c;
+      z-index: 10;
+    }
+
+    .nav-container {
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      font-size: 12px;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .nav-actions a {
+      background-color: white;
+      color: #2c4a7c;
+      padding: 3px 12px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s, color 0.3s;
+      font-size: 12px;
+    }
+
+    .nav-actions a:hover,
+    .nav-actions a:focus {
+      background-color: #ffffff;
+      color: #2c4a7c;
+      opacity: 0.85;
+    }
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100vh;
+      width: 100%;
+      background-color: #eef2fa;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      flex: 1;
+      padding-left: 4%;
+      padding-right: 3%;
+      max-width: 500px;
+    }
+
+    .hero-content h1 {
+      color: #2c4a7c;
+      font-size: 4rem;
+      margin-bottom: 20px;
+    }
+
+    .hero-content p {
+      color: #333;
+      font-size: 18px;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+
+    .btn-primary {
+      background-color: #395886;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      background-color: #2f4b7c;
+    }
+
+    .hero-image {
+      flex: 1.3;
+      height: 100%;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-top-left-radius: 40px;
+      border-bottom-left-radius: 40px;
+    }
+
+
+    .btn-primary {
+      background-color: #395886; color: white; padding: 12px 28px;
+      border-radius: 25px; text-decoration: none; font-weight: 600;
+    }
+    .btn-primary:hover { background-color: #2f4b7c; }
+
+    /* ALUR PENDAFTARAN */
+    /* ====== ALUR ====== */
+    .alur {
+      background-color: #f5f8fe;
+      padding: 60px 20px;
+    }
+
+    .alur-container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .alur h2 {
+      color: #2c4a7c;
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .alur-steps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .step-card {
+      background: #fff;
+      border-radius: 15px;
+      flex: 1 1 calc(50% - 20px);
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .step-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+    }
+
+    .step-number {
+      background-color: #2c4a7c;
+      color: white;
+      font-weight: bold;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1em;
+      flex-shrink: 0;
+    }
+
+    .step-card p {
+      color: #333;
+      margin: 0;
+      font-size: 0.95em;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .alur-steps {
+        flex-direction: column;
+      }
+      .step-card {
+        flex: 1 1 100%;
+      }
+    }
+
+    /* ====== KRITERIA ====== */
+    .kriteria-section {
+      margin-top: 60px;
+      text-align: left;
+    }
+
+    .kriteria-section h2 {
+      color: #2c4a7c;
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+
+    .kriteria-section p {
+      color: #444;
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+
+    .kriteria-container {
+      margin-top: 20px;
+    }
+
+    .kriteria-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .kriteria-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      background: #ffffff;
+      border: 1px solid #cfd9f0;
+      border-radius: 15px;
+      padding: 15px 20px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .kriteria-list li:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+
+    .badge {
+      font-size: 1.2em;
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    .badge-a { background-color: #0077cc; }
+    .badge-b { background-color: #009966; }
+    .badge-c { background-color: #f4b400; }
+
+    .kriteria-list h4 {
+      color: #2c4a7c;
+      margin-bottom: 4px;
+      font-size: 1.1em;
+      justify-content: center;
+    }
+
+    .kriteria-list p {
+      margin: 0;
+      color: #555;
+      font-size: 0.9em;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 768px) {
+      .kriteria-list li {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+
+/* ====== KRITERIA ====== */
+.kriteria-section {
+  margin-top: 60px;
+  text-align: left;
+  justify-content: center;
+}
+
+.kriteria-section h2 {
+  color: #2c4a7c;
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  justify-content: flex-end;
+}
+
+.kriteria-section p {
+  color: #444;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.kriteria-container {
+  margin-top: 20px;
+}
+
+.kriteria-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.kriteria-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  background: #ffffff;
+  border: 1px solid #cfd9f0;
+  border-radius: 15px;
+  padding: 15px 20px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.kriteria-list li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.badge {
+  font-size: 1.2em;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.badge-a { background-color: #0077cc; }
+.badge-b { background-color: #009966; }
+.badge-c { background-color: #f4b400; }
+
+.kriteria-list h4 {
+  color: #2c4a7c;
+  margin-bottom: 4px;
+  font-size: 1.1em;
+  text-align: center;
+}
+
+
+@media (max-width: 768px) {
+  .kriteria-list li {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+
+    /* FAQ SECTION */
+    .faq {
+      display: flex; justify-content: center; gap: 20px; padding: 60px 20px;
+      background-color: #eef2fa;
+    }
+    .faq-sidebar {
+      background-color: white; border-radius: 15px; padding: 20px;
+      width: 220px; box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+    .faq-sidebar button {
+      display: block; width: 100%; text-align: left; padding: 12px;
+      border: none; border-radius: 10px; margin-bottom: 10px;
+      background-color: #d9e5ff; color: #2c4a7c; font-weight: 600;
+      cursor: pointer; transition: 0.3s;
+    }
+    .faq-sidebar button.active, .faq-sidebar button:hover {
+      background-color: #2c4a7c; color: white;
+    }
+    .faq-content {
+      background-color: white; flex: 1; border-radius: 15px; padding: 30px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+    .faq-item {
+      background-color: #f0f6ff; border-radius: 10px;
+      margin-bottom: 10px; overflow: hidden; transition: 0.3s;
+    }
+    .faq-question {
+      padding: 15px; cursor: pointer; font-weight: 600;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .faq-question:hover { background-color: #d9e5ff; }
+    .faq-answer {
+      max-height: 0; overflow: hidden; background-color: #ffffff;
+      padding: 0 15px; transition: max-height 0.4s ease, padding 0.3s;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 200px; padding: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .hero { flex-direction: column; }
+      .faq { flex-direction: column; }
+      .faq-sidebar { width: 100%; display: flex; flex-wrap: wrap; gap: 10px; }
+      .faq-sidebar button { flex: 1 1 calc(50% - 10px); }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <div class="nav-links">
+        <a href="#">Beranda</a>
+        <a href="#alur">Alur</a>
+        <a href="#faq">FAQ</a>
+        <a href="helpdesk.html">Help Desk</a>
+      </div>
+      <div class="nav-actions">
+        <a href="sign-in.html">Sign In</a>
+        <a href="log-in.html">Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-image">
+      <img src="image/illust.jpg" alt="Ilustrasi siswa belajar" />
+    </div>
+    <div class="hero-content">
+      <h1>SCI-WEB</h1>
+      <p>Segera periksa data diri Anda sebelum melakukan pendaftaran sertifikasi kreativitas dari sekarang!</p>
+      <a href="#" class="btn-primary">Buku Petunjuk</a>
+    </div>
+  </section>
+
+
+  <section class="alur" id="alur">
+    <div class="alur-container">
+      <h2>Alur Pendaftaran</h2>
+      <div class="alur-steps">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <p>Isi data diri lengkap (NISN, NPSN, nama, email, password) dan pilih peran: siswa/guru/asesor.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <p>Jika biodata tervalidasi, sistem akan mengarahkan kembali ke halaman dasbor.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <p>Login menggunakan NISN dan password yang telah terdaftar.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <p>Setelah masuk, pengguna diarahkan ke laman sesuai peran masing-masing.</p>
+        </div>
+      </div>
+
+      <h2 style="margin-top:50px;">Alur Penilaian Sertifikasi Kreativitas</h2>
+      <div class="alur-steps">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <p>Pilih kategori ide dan unggah ide yang akan diajukan.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <p>Proses validasi dilakukan oleh sistem dan asesor.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <p>Hasil validasi diteruskan secara bertahap ke pihak terkait.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <p>Peserta mendapat notifikasi hasil validasi di platform SCI-WEB.</p>
+        </div>
+      </div>
+
+      <div class="kriteria-section">
+        <h2>Kriteria Kelulusan Sertifikasi</h2>
+        <p>Penilaian berdasarkan aspek keunikan, manfaat, rasionalitas, kreativitas, dampak, dan potensi realisasi.</p>
+        <p><strong>Kategori nilai:</strong></p>
+
+        <div class="kriteria-container">
+          <ul class="kriteria-list">
+            <li>
+              <span class="badge badge-a">A</span>
+              <div>
+                <h4>Sangat Baik</h4>
+              </div>
+            </li>
+            <li>
+              <span class="badge badge-b">B</span>
+              <div>
+                <h4>Baik</h4>
+              </div>
+            </li>
+            <li>
+              <span class="badge badge-c">C</span>
+              <div>
+                <h4>Cukup</h4>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="faq-sidebar">
+      <button class="active" onclick="showFaq('pendaftaran', this)">Pendaftaran</button>
+      <button onclick="showFaq('perbaikan', this)">Perbaikan Data</button>
+      <button onclick="showFaq('dokumen', this)">Dokumen</button>
+      <button onclick="showFaq('status', this)">Pengecekan Status Karya</button>
+      <button onclick="showFaq('login', this)">Login</button>
+      <button onclick="showFaq('penerbitan', this)">Penerbitan Karya</button>
+    </div>
+
+    <div class="faq-content" id="faq-content">
+      <!-- FAQ isi akan diubah oleh JS -->
+    </div>
+  </section>
+
+  <script>
+    const faqData = {
+      pendaftaran: [
+        { q: "Apakah SCI-WEB itu?", a: "..." },
+        { q: "Bagaimana melihat karya yang pernah disubmit?", a: "..." },
+        { q: "Apa saja dokumen yang harus diunggah?", a: "..." },
+        // { q: "Bagaimana jika data NISN/NPSN tidak ditemukan?", a: "..." }
+      ],
+      /*perbaikan: [
+        { q: "Bagaimana cara memperbaiki data akun?", a: "Masuk ke menu Profil, lalu pilih Edit Data untuk memperbarui informasi Anda." },
+        { q: "Apakah data bisa diperbarui setelah submit?", a: "Tergantung status validasi. Jika belum divalidasi, data masih dapat diubah." }
+      ],
+      dokumen: [
+        { q: "Format file apa yang diterima?", a: "Format umum yang diterima adalah PDF, JPG, PNG, dan MP4 untuk video pendukung." },
+        { q: "Berapa ukuran maksimal file?", a: "Ukuran file maksimal 25MB per unggahan." }
+      ],
+      status: [
+        { q: "Bagaimana mengecek status karya saya?", a: "Masuk ke dashboard, buka tab 'Status Karya' untuk melihat proses validasi ide Anda." },
+        { q: "Berapa lama proses validasi berlangsung?", a: "Biasanya 5–7 hari kerja tergantung jumlah karya yang masuk." }
+      ],
+      login: [
+        { q: "Saya lupa password, apa yang harus dilakukan?", a: "Gunakan fitur 'Lupa Password' di halaman login dan ikuti instruksi pemulihan." }
+      ],
+      penerbitan: [
+        { q: "Apakah karya yang lulus akan diterbitkan?", a: "Ya, karya yang mendapat nilai minimal kategori B akan diterbitkan di laman resmi SCI-WEB." }
+      ]*/
+    }
+
+    function renderFaq(category) {
+      const content = document.getElementById("faq-content");
+      content.innerHTML = "";
+      faqData[category].forEach(item => {
+        const div = document.createElement("div");
+        div.className = "faq-item";
+        div.innerHTML = `
+          <div class="faq-question">${item.q} <span>▼</span></div>
+          <div class="faq-answer">${item.a}</div>
+        `;
+        div.querySelector(".faq-question").addEventListener("click", () => {
+          div.classList.toggle("active");
+        });
+        content.appendChild(div);
+      });
+    }
+
+    function showFaq(category, btn) {
+      document.querySelectorAll(".faq-sidebar button").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      renderFaq(category);
+    }
+
+    renderFaq("pendaftaran"); // default pertama
+  </script>
+</body>
+</html>
