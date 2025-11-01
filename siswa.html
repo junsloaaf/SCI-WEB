@@ -287,7 +287,7 @@
   <nav>
     <div class="nav-container">
       <div class="nav-links">
-        <a href="index.html">Beranda</a>
+        <a href="index.html">Dashboard</a>
         <a href="siswa-faq.html">FAQ</a>
         <a href="helpdesk.html">Help Desk</a>
       </div>
@@ -296,54 +296,54 @@
 
   <main>
     <div class="sidebar">
-      <h2>Halo, Aliya.</h2>
+      <h2>Howdy, Aliya.</h2>
       <p>Nama: Aliya Syauqina Hadi</p>
       <p>NISN: 0076726146</p>
       <p>Asal Sekolah: SMAN 2 Probolinggo</p>
 
-      <div class="menu-title">Pilihan Menu</div>
-      <button class="menu-btn" id="btn-kategori">Kategori Ide</button>
-      <button class="menu-btn" id="btn-unggah">Unggah Karya</button>
-      <button class="menu-btn" id="btn-status">Status Karya</button>
+      <div class="menu-title">Pilihan MenuMenu Selection</div>
+      <button class="menu-btn" id="btn-kategori">Idea Category</button>
+      <button class="menu-btn" id="btn-unggah">Update Assesment</button>
+      <button class="menu-btn" id="btn-status">Assesment Status</button>
       <button class="menu-btn" id="btn-logout-menu">Logout</button>
     </div>
 
     <div class="content">
       <!-- Kategori view -->
       <div class="view kategori-view active" id="view-kategori">
-        <h2>Kategori Ide</h2>
+        <h2>Idea Category</h2>
         <div class="kategori-grid">
           <div class="kategori-item">
-            <img src="pendidikan.jpg" alt="Pendidikan Icon" class="kategori-icon">
-            <div class="kategori-btn">Pendidikan</div>
+            <img src="pendidikan.jpg" alt="Education Icon" class="kategori-icon">
+            <div class="kategori-btn">Education</div>
           </div>
           <div class="kategori-item">
-            <img src="makanan.jpg" alt="Makanan Icon" class="kategori-icon">
-            <div class="kategori-btn">Makanan</div>
+            <img src="makanan.jpg" alt="Foods Icon" class="kategori-icon">
+            <div class="kategori-btn">Foods</div>
           </div>
           <div class="kategori-item">
-            <img src="seni.jpg" alt="Seni Icon" class="kategori-icon">
-            <div class="kategori-btn">Seni</div>
+            <img src="seni.jpg" alt="Arts Icon" class="kategori-icon">
+            <div class="kategori-btn">Arts</div>
           </div>
           <div class="kategori-item">
-            <img src="kesehatan.jpg" alt="Kesehatan Icon" class="kategori-icon">
-            <div class="kategori-btn">Kesehatan</div>
+            <img src="kesehatan.jpg" alt="Medical Icon" class="kategori-icon">
+            <div class="kategori-btn">Medical</div>
           </div>
         </div>
       </div>
 
       <!-- Upload karya view -->
       <div class="view upload-form" id="view-unggah">
-        <h2>Unggah Karya</h2>
+        <h2>Upload Assesment</h2>
         <form>
-          <label for="judul">Judul Karya</label>
-          <input type="text" id="judul" name="judul" placeholder="Masukkan judul karya" />
+          <label for="judul">Assesment Title</label>
+          <input type="text" id="judul" name="judul" placeholder="Please write your assesment title" />
 
-          <label for="ringkasan">Ringkasan (Maks. 250 kata)</label>
-          <textarea id="ringkasan" name="ringkasan" placeholder="Tuliskan ringkasan karya"></textarea>
+          <label for="ringkasan">Summary (Max. 250 words)</label>
+          <textarea id="ringkasan" name="ringkasan" placeholder="Please write your assesment summary"></textarea>
 
           <div class="actions">
-            <label for="dokumen" class="btn-upload">Unggah Dokumen Pendukung</label>
+            <label for="dokumen" class="btn-upload">Upload Supporting Documents</label>
             <input type="file" id="dokumen" name="dokumen" accept=".pdf,.jpg,.png" />
             <button type="submit">Submit</button>
           </div>
@@ -356,31 +356,31 @@
         <ul class="status-list">
           <li class="status-item">
             <div class="checkbox checked">✔</div>
-            <span>Unggah Dokumen Pendukung</span>
+            <span>Upload Supporting Documents</span>
           </li>
           <li class="status-item">
             <div class="checkbox checked">✔</div>
-            <span>Validasi Biodata Siswa oleh Pembimbing</span>
+            <span>Validate Student's Biodata by the Guide</span>
           </li>
           <li class="status-item">
             <div class="checkbox checked">✔</div>
-            <span>Submit Judul dan Ringkasan Ide Kreatif</span>
+            <span>Submit Creative Idea/Concept Title</span>
           </li>
           <li class="status-item">
             <div class="checkbox checked">✔</div>
-            <span>Finalisasi Data oleh Pembimbing</span>
+            <span>Data Finalization by the Guide</span>
           </li>
           <li class="status-item">
             <div class="checkbox"> </div>
-            <span>Finalisasi Data oleh Asesor</span>
+            <span>Data Finalization by the Assesor</span>
           </li>
           <li class="status-item">
             <div class="checkbox"> </div>
-            <span>Hasil Penilaian</span>
+            <span>Evaluation</span>
           </li>
           <li class="status-item">
             <div class="checkbox"> </div>
-            <span>Cetak Sertifikat</span>
+            <span>Print Certificate</span>
           </li>
         </ul>
       </div>
@@ -389,9 +389,9 @@
       <div class="view logout-view" id="view-logout">
         <h2>Logout</h2>
         <div class="info">
-          <p>Nama: Aliya Syauqina Hadi</p>
+          <p>Name: Aliya Syauqina Hadi</p>
           <p>NISN: 0076726146</p>
-          <p>Asal Sekolah: SMAN 2 Probolinggo</p>
+          <p>School: SMAN 2 Probolinggo</p>
         </div>
         <button class="btn-logout-view" id="btn-logout-confirm">Logout</button>
       </div>
@@ -452,4 +452,5 @@
   </script>
 </body>
 </html>
+
 
