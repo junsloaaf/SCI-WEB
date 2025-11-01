@@ -75,48 +75,48 @@
   </style>
 </head>
 <body>
-  <nav>Review Karya Peserta</nav>
+  <nav>Studnets Assesment revier</nav>
 
   <div class="content-box">
-    <h2 id="namaSiswa">Nama Peserta</h2>
-    <p id="kategoriSiswa">Kategori: -</p>
+    <h2 id="namaSiswa">Name :</h2>
+    <p id="kategoriSiswa">Category: -</p>
 
     <div class="section">
-      <h3>Data Siswa</h3>
+      <h3>Student Data</h3>
       <div class="section-content">
-        <p>Nama Lengkap: <span id="namaLengkap"></span></p>
-        <p>Sekolah: SMAN 2 Probolinggo</p>
+        <p>Full Name :<span id="namaLengkap"></span></p>
+        <p>School: SMAN 2 Probolinggo</p>
         <p>NISN: 00654329</p>
       </div>
-      <button onclick="validateSection(this)">Validasi Data Siswa</button>
+      <button onclick="validateSection(this)">Validate Student Data</button>
     </div>
 
     <div class="section">
-      <h3>Judul Ide / Gagasan</h3>
+      <h3>Idea/Concept Title</h3>
       <div class="section-content">
-        <p id="judulKarya">Penerapan AI untuk Pembelajaran Efektif di Sekolah</p>
+        <p id="judulKarya">Implementation of AI for Effective Learning in Schools</p>
       </div>
-      <button onclick="validateSection(this)">Validasi Judul</button>
+      <button onclick="validateSection(this)">Validaste Title</button>
     </div>
 
     <div class="section">
-      <h3>Ringkasan Karya</h3>
+      <h3>Assesment Summary</h3>
       <div class="section-content">
-        <p id="ringkasan">Karya ini membahas pemanfaatan kecerdasan buatan dalam meningkatkan efektivitas proses belajar mengajar di lingkungan sekolah menengah atas.</p>
+        <p id="ringkasan">This work discusses the utilization of artificial intelligence in enhancing the effectiveness of teaching and learning processes in a senior high school environment.</p>
       </div>
-      <button onclick="validateSection(this)">Validasi Ringkasan</button>
+      <button onclick="validateSection(this)">Validate Summary</button>
     </div>
 
     <div class="section">
-      <h3>Komentar Pembimbing</h3>
+      <h3>Guide's Comment</h3>
       <div class="section-content" id="komentar">
-        <p>Karya sudah cukup baik, namun perlu penjelasan lebih mendalam di bagian hasil dan pembahasan.</p>
+        <p>The work is quite good, but it needs a more in-depth explanation in the results and discussion section.</p>
       </div>
-      <button onclick="validateSection(this)">Validasi Akhir</button>
+      <button onclick="validateSection(this)">Last Validate</button>
     </div>
 
     <div class="footer">
-      <button onclick="goBack()">⬅ Kembali ke Dashboard</button>
+      <button onclick="goBack()">⬅ Back to Dashboard</button>
     </div>
   </div>
 
@@ -133,9 +133,9 @@
     function validateSection(btn) {
       btn.classList.toggle("validated");
       if (btn.classList.contains("validated")) {
-        btn.textContent = "✅ Tervalidasi";
+        btn.textContent = "✅ Validated";
       } else {
-        btn.textContent = "Validasi Ulang";
+        btn.textContent = "Revalidate";
       }
     }
 
@@ -145,3 +145,4 @@
   </script>
 </body>
 </html>
+
