@@ -115,8 +115,8 @@
   <nav>
     <div class="nav-container">
       <div class="nav-links">
-        <a href="siswa.html">← Kembali</a>
-        <a href="index.html">Beranda</a>
+        <a href="siswa.html">← Back</a>
+        <a href="index.html">Dashboard</a>
         <a href="siswa-faq.html">FAQ</a>
         <a href="helpdesk.html">Help Desk</a>
       </div>
@@ -125,12 +125,12 @@
 
   <section class="faq" id="faq">
     <div class="faq-sidebar">
-      <button class="active" onclick="showFaq('pendaftaran', this)">Pendaftaran</button>
-      <button onclick="showFaq('perbaikan', this)">Perbaikan Data</button>
-      <button onclick="showFaq('dokumen', this)">Dokumen</button>
-      <button onclick="showFaq('status', this)">Pengecekan Status</button>
+      <button class="active" onclick="showFaq('pendaftaran', this)">Registration</button>
+      <button onclick="showFaq('perbaikan', this)">Data Correction</button>
+      <button onclick="showFaq('dokumen', this)">Document</button>
+      <button onclick="showFaq('status', this)">Status Checking</button>
       <button onclick="showFaq('login', this)">Login</button>
-      <button onclick="showFaq('penerbitan', this)">Penerbitan Karya</button>
+      <button onclick="showFaq('penerbitan', this)">Assesment Submission</button>
     </div>
 
     <div class="faq-content" id="faq-content"></div>
@@ -139,11 +139,11 @@
   <script>
     const faqData = {
       pendaftaran: [
-        { q: "Apakah SCI-WEB itu?", a: "..." },
-        { q: "Bagaimana melihat karya-karya yang pernah disubmit sebelumnya?", a: "..." },
-        { q: "Apa saja dokumen yang harus diunggah saat pembuatan akun?", a: "..." },
-        { q: "Bagaimana jika data NISN/NPSN tidak ditemukan?", a: "..." },
-        { q: "Bagaimana  jika muncul informasi NISN/NPSN sudah terdaftar ketika membuat akun pendaftaran?", a: "..." }
+        { q: "What is SCI-WEB?", a: "..." },
+        { q: "How do I view previously submitted works?", a: "..." },
+        { q: "What documents must be uploaded when creating an account?", a: "..." },
+        { q: "What if the NISN/NPSN data cannot be found?", a: "..." },
+        { q: "What if the information "NISN/NPSN is already registered" appears when creating a registration account?", a: "..." }
        ],
     //   perbaikan: [
     //     { q: "Bagaimana memperbaiki data akun?", a: "Masuk ke menu Profil, lalu pilih 'Edit Data' untuk memperbarui informasi Anda." },
@@ -192,3 +192,4 @@
   </script>
 </body>
 </html>
+
