@@ -94,7 +94,7 @@
   <nav>
     <div class="nav-container">
       <div class="nav-links">
-        <a href="index.html">Beranda</a>
+        <a href="index.html">Dashboard</a>
         <a href="asesor-faq.html">FAQ</a>
         <a href="helpdesk.html">Help Desk</a>
       </div>
@@ -104,10 +104,10 @@
   <div class="main-container">
     <!-- SIDEBAR -->
     <div class="sidebar">
-      <h2>Halo, Pak/Bu.</h2>
-      <p>Nama : X</p>
+      <h2>Hello, Sir/Ma'am.</h2>
+      <p>Nama : Lorem Ipsum</p>
       <p>NIP : 0123456789</p>
-      <p>Status : Asesor</p>
+      <p>Status : Assesesor</p>
 
       <button class="menu-btn" onclick="showPage('dashboard')">Dashboard</button>
       <button class="menu-btn" onclick="showPage('logout')">Logout</button>
@@ -115,34 +115,34 @@
 
     <!-- DASHBOARD -->
     <div class="content-box active" id="dashboard">
-      <h3>Daftar Peserta Didik</h3>
+      <h3>List of Students</h3>
       <div class="filters">
         <select id="filterSekolah">
-          <option value="all">Semua Sekolah</option>
+          <option value="all">All Schools</option>
           <option>SMAN 1 Probolinggo</option>
           <option>SMAN 2 Probolinggo</option>
         </select>
         <select id="filterKategori">
-          <option value="all">Semua Kategori</option>
-          <option>Pendidikan</option>
-          <option>Makanan</option>
-          <option>Seni</option>
-          <option>Kesehatan</option>
+          <option value="all">All Categories</option>
+          <option>Education</option>
+          <option>Foods</option>
+          <option>Arts</option>
+          <option>Medical</option>
         </select>
         <select id="filterStatus">
-          <option value="all">Semua Status</option>
-          <option>Belum Direview</option>
-          <option>Menunggu Persetujuan</option>
-          <option>Terpilih</option>
+          <option value="all">All Status</option>
+          <option>Not Yet Reviewed</option>
+          <option>Awaiting Approval</option>
+          <option>Selected</option>
         </select>
       </div>
 
       <table id="studentTable">
         <thead>
           <tr>
-            <th>Asal Sekolah</th>
-            <th>Nama Siswa</th>
-            <th>Kategori</th>
+            <th>School</th>
+            <th>Name</th>
+            <th>iCategory/th>
             <th>Status</th>
           </tr>
         </thead>
@@ -150,19 +150,19 @@
           <tr data-sekolah="SMAN 2 Probolinggo" data-kategori="Pendidikan" data-status="Belum Direview">
             <td>SMAN 2 Probolinggo</td>
             <td class="name-cell" onclick="showDetail('Aliya Syauqina Hadi')">Aliya Syauqina Hadi</td>
-            <td>Pendidikan</td>
+            <td>Education</td>
             <td>Belum Direview</td>
           </tr>
           <tr data-sekolah="SMAN 2 Probolinggo" data-kategori="Kesehatan" data-status="Menunggu Persetujuan">
             <td>SMAN 2 Probolinggo</td>
             <td class="name-cell" onclick="showDetail('Elsa Sabrina Ramadani')">Elsa Sabrina Ramadani</td>
-            <td>Kesehatan</td>
+            <td>Medical</td>
             <td>Menunggu Persetujuan</td>
           </tr>
           <tr data-sekolah="SMAN 2 Probolinggo" data-kategori="Seni" data-status="Terpilih">
             <td>SMAN 2 Probolinggo</td>
             <td class="name-cell" onclick="showDetail('Nabila Aisyah')">Nabila Aisyah</td>
-            <td>Kesehatan</td>
+            <td>Arts</td>
             <td>Menunggu Persetujuan</td>
           </tr>
           <tr data-sekolah="SMAN 2 Probolinggo" data-kategori="Kesehatan" data-status="Menunggu Persetujuan">
@@ -174,13 +174,13 @@
           <tr data-sekolah="SMAN 2 Probolinggo" data-kategori="Pendidikan" data-status="Belum Direview">
             <td>SMAN 2 Probolinggo</td>
             <td class="name-cell" onclick="showDetail('Aliya Lukita Safirah')">Aliya Lukita Safirah</td>
-            <td>Kesehatan</td>
+            <td>Arts</td>
             <td>Menunggu Persetujuan</td>
           </tr>
           <tr data-sekolah="SMAN 2 Probolinggo" data-kategori="Makanan" data-status="Menunggu Persetujuan">
             <td>SMAN 2 Probolinggo</td>
             <td class="name-cell" onclick="showDetail('Semara Kanaya Andari')">Semara Kanaya Andari</td>
-            <td>Kesehatan</td>
+            <td>Education</td>
             <td>Menunggu Persetujuan</td>
           </tr>
         </tbody>
@@ -194,54 +194,54 @@
       <!-- Bagian 1 -->
       <div id="section-karya">
         <div class="section">
-          <h4>Judul Ide / Gagasan</h4>
+          <h4>Idea/Concept Title</h4>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <button class="validate-btn" onclick="toggleValidasi(this)">Validasi</button>
+          <button class="validate-btn" onclick="toggleValidasi(this)">Validate</button>
         </div>
 
         <div class="section">
-          <h4>Ringkasan Ide / Gagasan</h4>
+          <h4>Idea/Concept Summary</h4>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam iaculis consectetur nisl, eget feugiat felis euismod eget. Maecenas id purus accumsan ligula finibus vehicula in et nisi. Mauris lobortis metus sit amet ipsum egestas convallis. Nullam non odio vitae ante lacinia fringilla nec et est. Donec at felis et enim imperdiet finibus nec quis risus. Pellentesque blandit dolor vel massa interdum, at vestibulum enim semper. Proin facilisis tellus nisl, non varius erat tempus nec. Maecenas vitae fringilla tortor, id ultrices libero. Morbi congue justo sit amet fringilla semper.</p>
-          <button class="validate-btn" onclick="toggleValidasi(this)">Validasi</button>
+          <button class="validate-btn" onclick="toggleValidasi(this)">Validate</button>
         </div>
 
         <div class="section">
-          <h4>Dokumen Pendukung</h4>
-          <p><a href="#">Lihat Dokumen.pdf</a></p>
-          <button class="validate-btn" onclick="toggleValidasi(this)">Validasi</button>
+          <h4>Supporting Document</h4>
+          <p><a href="#">See DOcument.pdf</a></p>
+          <button class="validate-btn" onclick="toggleValidasi(this)">Validate</button>
         </div>
       </div>
 
       <!-- Bagian 2 -->
       <div id="section-nilai" class="hidden">
         <div class="section">
-          <h4>Penilaian</h4>
+          <h4>Evaluation</h4>
           <input type="range" id="rangeNilai" min="1" max="100" value="80" oninput="updateGrade()"/>
-          <div class="score">Nilai: <span id="nilaiAngka">80</span> (<span id="nilaiHuruf">A</span>)</div>
+          <div class="score">Grade: <span id="nilaiAngka">80</span> (<span id="nilaiHuruf">A</span>)</div>
         </div>
 
         <div class="section">
-          <h4>Review Asesor</h4>
-          <textarea id="reviewAsesor" placeholder="Tulis masukan Anda di sini..."></textarea>
+          <h4>Assesor Review</h4>
+          <textarea id="reviewAsesor" placeholder="Please write your feedback here..."></textarea>
         </div>
 
         <div class="section">
-          <h4>Rekomendasi</h4>
-          <textarea id="rekomendasiAsesor" placeholder="Tulis saran untuk siswa di sini..."></textarea>
+          <h4>Recommendationi</h4>
+          <textarea id="rekomendasiAsesor" placeholder="Please write your suggestions for students here."></textarea>
         </div>
 
-        <button class="submit-btn" onclick="kirimPenilaian()">Kirim Penilaian</button>
+        <button class="submit-btn" onclick="kirimPenilaian()">Send Evaluation</button>
       </div>
 
-      <button class="action-btn" onclick="showPage('dashboard')">Kembali ke Dashboard</button>
+      <button class="action-btn" onclick="showPage('dashboard')">Back to Dashboard</button>
     </div>
 
     <!-- LOGOUT -->
     <div class="content-box" id="logout">
       <div class="logout-box">
         <h3>Logout</h3>
-        <p>Keluar Akun Sertifikasi.</p>
-        <p><b>Pastikan data yang direview sudah disubmit, sehingga isian Anda tidak hilang.</b></p>
+        <p>Log out of the Certification Account.</p>
+        <p><b>Please ensure that the data being reviewed has already been submitted, so your entries won’t be lost.</b></p>
         <button class="logout-btn" onclick="window.location.href='index.html'">Logout</button>
       </div>
     </div>
@@ -312,3 +312,4 @@
   </script>
 </body>
 </html>
+
